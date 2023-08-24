@@ -4,6 +4,7 @@ using newCityWebApp.Configurations;
 
 namespace newCityWebApp.Services;
 
+//test
 public class OpenAiService : IOpenAiService
 {
     private readonly OpenAiConfig _openAiConfig;
