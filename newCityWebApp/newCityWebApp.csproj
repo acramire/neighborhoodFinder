@@ -40,4 +40,7 @@
     <Folder Include="Configurations\" />
     <Folder Include="Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="appsettings.Development.json" />
+  </ItemGroup>
 </Project>
