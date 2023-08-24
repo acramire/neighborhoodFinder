@@ -1,0 +1,38 @@
+﻿@model newCityWebApp.ViewModels.SubmissionViewModel
+
+@using newCityWebApp.Views.Submission
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Moving to a new City?! Find your ideal neighborhood below!</h1>
+    <p>
+        Fill out the form below in order to find your ideal neighborhood in your new city! We will use the info you provide and ChatGPT API
+        and then match you with the 5 most relevant neighborhoods with a description on why it does and doesn't match with your preferences! Since we are using ChatGPT API We currently have a limit of 3 submissions per logged in User. Thank you!'
+    </p>
+    <br /><br />
+
+    @if (User.Identity.IsAuthenticated && (int)ViewData["NumberOfSubmissions"] < 20)
+    {
+        <p>Welcome @User.Identity.Name! You have submitted @ViewData["NumberOfSubmissions"] times.</p>
+        
+        //<partial name="~/Views/Submission/_CreateForm.cshtml" model="Submission"/>
+        <partial name="~/Views/Submission/_CreateForm.cshtml" model="Model"></partial>
+    }
+    else if (User.Identity.IsAuthenticated)
+    {
+        <p>You have reached the maximum number of submissions.</p>
+    }
+    else
+    {
+        <p>
+            Please Login to use the service :)!
+        </p>
+        
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    
+    }
+
+</div>
+

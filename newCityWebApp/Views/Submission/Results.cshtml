@@ -1,0 +1,38 @@
+﻿@model newCityWebApp.Models.Submission
+
+<h1>Submissions</h1>
+
+<!--
+<table class="table">
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Number of Children</th>
+            <th>User</th>
+            <th>Diversity Importance</th>
+            <th>Public Transportation Importance </th>
+
+        </tr>
+    </thead>
+<tbody>
+    foreach (var submission in Model)
+    {
+        <tr>
+            <td>submission.City</td>
+            <td>submission.NumberOfChildren</td>
+            <td>submission.User.UserName</td>
+            <td>submission.DiversityImportance</td>
+            <td>submission.PublicTransportationImportance</td>
+
+        </tr>
+    }
+</tbody>
+</table>
+  -->
+<h2>Submission Details:</h2>
+<p>City: @Model.City</p>
+<p>Number of Children: @Model.NumberOfChildren</p>
+<!-- Add other details -->
+
+<h2>API Response:</h2>
+<p>@ViewBag.Response</p>

@@ -1,0 +1,42 @@
+
+@model newCityWebApp.ViewModels.SubmissionViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@using (Html.BeginForm("Create", "Submission", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.SelectedCity)
+    @Html.DropDownListFor(m => m.SelectedCity, Model.AvailableCities, "Select a City")
+    @Html.ValidationMessageFor(m => m.SelectedCity, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(m => m.NumberOfChildren)
+    @Html.EditorFor(m => m.NumberOfChildren)
+    @Html.ValidationMessageFor(m => m.NumberOfChildren, "Test", new { @class = "text-danger" })
+
+    @Html.LabelFor(m => m.Age)
+    @Html.EditorFor(m => m.Age)
+
+    @Html.LabelFor(m => m.AffordabilityImportance)
+    @Html.EditorFor(m => m.AffordabilityImportance)
+
+    @Html.LabelFor(m => m.SafetyImportance)
+    @Html.EditorFor(m => m.SafetyImportance)
+
+    @Html.LabelFor(m => m.DiversityImportance)
+    @Html.EditorFor(m => m.DiversityImportance)
+
+    @Html.LabelFor(m => m.SocialImportance)
+    @Html.EditorFor(m => m.SocialImportance)
+
+    @Html.LabelFor(m => m.PublicTransportationImportance)
+    @Html.EditorFor(m => m.PublicTransportationImportance)
+
+
+    <!-- Add other form fields as needed -->
+
+    <button type="submit">Submit</button>
+}
