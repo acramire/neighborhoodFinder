@@ -7,12 +7,16 @@ using newCityWebApp.ViewModels;
 
 namespace newCityWebApp.Controllers;
 
+// HomeController class inherits from Controller base class
+// This controller manages the Home views and related actions
 public class HomeController : Controller
 {
+    
     private readonly ILogger<HomeController> _logger;
     private readonly UserManager<ApplicationUser> _userManager;
 
 
+    // Constructor w/ Dependency injection for  Ilogger and UserManager 
     public HomeController(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager)
     {
         _logger = logger;
@@ -20,12 +24,8 @@ public class HomeController : Controller
 
     }
 
-    /*
-    public IActionResult Index()
-    {
-        return View();
-    }
-    */
+    // Index action method
+    // Checks if the user is authenticated, populates ViewData w/ # of submissions
     public async Task<IActionResult> Index()
     {
         if (User.Identity.IsAuthenticated)
@@ -33,27 +33,23 @@ public class HomeController : Controller
             var user = await _userManager.GetUserAsync(User);
             ViewData["NumberOfSubmissions"] = user.NumberOfSubmissions;
         }
+
+        // Initialize view model for submission
         SubmissionViewModel viewModel = new SubmissionViewModel();
-        /*{
-            AvailableCities = new List<SelectListItem>
-            {
-                new SelectListItem { Value = "San Diego", Text = "San Diego" },
-                new SelectListItem { Value = "New York", Text = "New York" },
-                new SelectListItem { Value = "Los Angeles", Text = "Los Angeles" },
-                //new SelectListItem { Value = "Seattle", Text = "Seattle" },
-            }
-        }; */
 
         return View(viewModel);
        
     }
 
 
+    // Privacy Action Method
     public IActionResult Privacy()
     {
         return View();
     }
 
+
+    //Default Error Action Method
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

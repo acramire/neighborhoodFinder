@@ -10,7 +10,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         : base(options)
     {
     }
-    public DbSet<newCityWebApp.Models.Joke> Joke { get; set; } = default!;
+    //public DbSet<newCityWebApp.Models.Joke> Joke { get; set; } = default!;
     public DbSet<Submission> Submissions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
