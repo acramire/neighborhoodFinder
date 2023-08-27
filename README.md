@@ -5,7 +5,6 @@
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
 - [Technologies](#technologies)
-- [Features](#features)
 
 
 
@@ -33,7 +32,7 @@ The project follows the MVC (Model-View-Controller) pattern and is organized as 
   - `Account`: Views for login and account creation.
   - `Submission`: Results View after valid submission, contains partial view for form. 
 
-- **Data**: Houses the Entity Framework data context and migrations.
+- **Data**: Contains the Entity Framework data context and migrations.
   - `ApplicationDbContext.cs`: The main data context class.
 
 - **Services**: Contains any additional services like OpenAI API interaction.
@@ -48,12 +47,6 @@ The project follows the MVC (Model-View-Controller) pattern and is organized as 
 - Database: SQLite with Entity Framework, SQL when deployed to azure 
 - Cloud: Azure
 - Others: OpenAI API, Identity for authentication
-
-## Features
-
-- Ideal Neighborhood Finder
-- User Authentication
-- User Submissions
 
 
 
