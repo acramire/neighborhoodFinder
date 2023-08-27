@@ -29,7 +29,6 @@ The project follows the MVC (Model-View-Controller) pattern and is organized as 
 
 - **Views**: Contains the Razor views for the different controllers.
   - `Home`: Views related to the home page and main functionality.
-  - `Account`: Views for login and account creation.
   - `Submission`: Results View after valid submission, contains partial view for form. 
 
 - **Data**: Contains the Entity Framework data context and migrations.
